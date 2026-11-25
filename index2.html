@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هوية تطبيق ملاذ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f6f5f0;
+      color: #1e2926;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .hero {
+      background: #ffffff;
+      border: 1px solid #dfe6e3;
+      border-radius: 24px;
+      padding: 28px 22px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e6efec;
+      color: #2f5d50;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: #2f5d50;
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #556460;
+    }
+
+    .box {
+      background: #ffffff;
+      border: 1px solid #dfe6e3;
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: #2f5d50;
+      font-size: 1.25rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: #f6f5f0;
+      border: 1px solid #dfe6e3;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #556460;
+    }
+
+    .colors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .color-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f6f5f0;
+      border: 1px solid #dfe6e3;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- القسم 1: التعريف -->
+    <header class="hero">
+      <span class="badge">هوية مشروع ملاذ</span>
+      <h1>ملاذ</h1>
+      <p>مساحة رقمية هادئة وآمنة للاندماج والتواصل المجتمعي والدعم دون تعقيد أو ضغط.</p>
+    </header>
+
+    <!-- القسم 2: ركائز الهوية -->
+    <section class="box">
+      <h2>أقسام الهوية</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>الفكرة</h3>
+          <p>توفير بيئة داعمة تجمع دوائر الدعم والمحادثة الآمنة والإرشاد العملي.</p>
+        </div>
+        <div class="card">
+          <h3>الراحة والزوايا</h3>
+          <p>تصميم هادئ بحواف دائرية ناعمة يقلل التشتت ويريح العين.</p>
+        </div>
+        <div class="card">
+          <h3>إمكانية الوصول</h3>
+          <p>مرونة تناسب احتياج المستخدم في القراءة والتفاعل بهدوء.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- القسم 3: الألوان -->
+    <section class="box">
+      <h2>ألوان الهوية</h2>
+      <div class="colors">
+        <div class="color-pill">
+          <span class="dot" style="background:#2f5d50;"></span>
+          أخضر هادئ (#2F5D50)
+        </div>
+        <div class="color-pill">
+          <span class="dot" style="background:#f6f5f0;"></span>
+          خلفية دافئة (#F6F5F0)
+        </div>
+        <div class="color-pill">
+          <span class="dot" style="background:#ffffff;"></span>
+          أبيض للبطاقات (#FFFFFF)
+        </div>
+      </div>
+    </section>
+      <!-- الخطوة 2: تطبيق ملاذ بهويته -->
+    <section class="box">
+      <h2>تطبيق ملاذ بهويته</h2>
+      <div class="app-area">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="openScreen('home', this)">الرئيسية</button>
+          <button class="tab-btn" onclick="openScreen('circles', this)">دوائر الدعم</button>
+          <button class="tab-btn" onclick="openScreen('chat', this)">المحادثة الآمنة</button>
+          <button class="tab-btn" onclick="openScreen('guide', this)">الإرشاد</button>
+          <button class="tab-btn" onclick="openScreen('comfort', this)">الراحة</button>
+        </div>
+
+        <div class="phone">
+          <div class="screen active" id="home">
+            <div class="screen-title">الرئيسية</div>
+            <p style="font-size:0.9rem;">كيف حالك اليوم؟ (اختياري)</p>
+            <div class="pills">
+              <span class="pill selected" onclick="pickPill(this)">مرتاح</span>
+              <span class="pill" onclick="pickPill(this)">عادي</span>
+              <span class="pill" onclick="pickPill(this)">متعب</span>
+            </div>
+            <div class="item"><strong>دوائر الدعم:</strong> مجموعات للتواصل وتبادل الخبرات</div>
+            <div class="item"><strong>المحادثة الآمنة:</strong> تواصل خاص باسم مستعار</div>
+            <div class="item"><strong>الإرشاد والموارد:</strong> خطوات عملية مختصرة</div>
+            <div class="item"><strong>تفضيلات الراحة:</strong> النص والتباين والحركة</div>
+          </div>
+
+          <div class="screen" id="circles">
+            <div class="screen-title">دوائر الدعم</div>
+            <div class="pills">
+              <span class="pill selected" onclick="pickPill(this)">الكل</span>
+              <span class="pill" onclick="pickPill(this)">الاندماج</span>
+              <span class="pill" onclick="pickPill(this)">الدعم</span>
+              <span class="pill" onclick="pickPill(this)">الخبرات</span>
+            </div>
+            <div class="item"><strong>دائرة البدايات الجديدة:</strong> للتعارف والاندماج بهدوء</div>
+            <div class="item"><strong>دائرة تبادل الخبرات:</strong> مشاركة التجارب اليومية</div>
+            <div class="item"><strong>دائرة الدعم المتبادل:</strong> مساحة للحديث والإصغاء</div>
+          </div>
+
+          <div class="screen" id="chat">
+            <div class="screen-title">المحادثة الآمنة</div>
+            <div class="item">أنت تكتب باسم: <strong>[اسم مستعار]</strong></div>
+            <div class="pills">
+              <span class="pill" onclick="pickPill(this)">أنا معك</span>
+              <span class="pill" onclick="pickPill(this)">شكراً لمشاركتك</span>
+              <span class="pill" onclick="pickPill(this)">خذ وقتك</span>
+            </div>
+            <input class="input-box" type="text" placeholder="اكتب رسالتك..." />
+          </div>
+
+          <div class="screen" id="guide">
+            <div class="screen-title">الإرشاد والموارد</div>
+            <div class="item"><strong>أول خطوة للاندماج:</strong> ثلاث خطوات بسيطة للبدء</div>
+            <div class="item"><strong>التعامل مع يوم مرهق:</strong> طرق قصيرة لترتيب يومك</div>
+            <div class="item"><strong>كيف أبدأ حديثاً:</strong> عبارات تساعدك على التعارف</div>
+          </div>
+
+          <div class="screen" id="comfort">
+            <div class="screen-title">تفضيلات الراحة</div>
+            <div class="item"><strong>حجم النص:</strong> صغير • متوسط • كبير</div>
+            <div class="item"><strong>وضع الهدوء:</strong> تشغيل / إيقاف</div>
+            <div class="item"><strong>التباين وتقليل الحركة:</strong> تخصيص مريح للقراءة</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .app-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .tab-btn { border: 1px solid #dfe6e3; background: #f6f5f0; color: #1e2926; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; cursor: pointer; }
+    .tab-btn.active { background: #2f5d50; color: #ffffff; border-color: #2f5d50; }
+    .phone { width: 100%; max-width: 360px; background: #f6f5f0; border: 2px solid #dfe6e3; border-radius: 30px; padding: 18px 14px; }
+    .screen { display: none; }
+    .screen.active { display: block; }
+    .screen-title { font-weight: 700; color: #2f5d50; font-size: 1.15rem; margin-bottom: 10px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+    .pill { background: #ffffff; border: 1px solid #dfe6e3; padding: 6px 12px; border-radius: 999px; font-size: 0.88rem; cursor: pointer; }
+    .pill.selected { background: #2f5d50; color: #ffffff; border-color: #2f5d50; }
+    .item { background: #ffffff; border: 1px solid #dfe6e3; border-radius: 14px; padding: 10px 12px; margin-bottom: 8px; font-size: 0.9rem; }
+    .input-box { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 999px; border: 1px solid #dfe6e3; background: #ffffff; font-size: 0.9rem; }
+  </style>
+
+  <script>
+    function openScreen(id, btn) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+    function pickPill(el) {
+      el.parentElement.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+  </script>
+</body>
+</html>
+
